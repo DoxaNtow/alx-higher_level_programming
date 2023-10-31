@@ -1,0 +1,54 @@
+def test_add_integer():
+    # Test cases for integer addition
+    assert add_integer(2, 3) == 5
+    assert add_integer(2, -3) == -1
+    assert add_integer(2.0, 3.0) == 5
+    assert add_integer(2.9, 0.2) == 2
+    assert add_integer(-2.9, -0.2) == -2
+    assert add_integer(2.3, -3) == -1
+    assert add_integer(2) == 100
+
+    # Test cases for non-integer and non-float inputs
+    try:
+        add_integer("hello", 3)
+    except TypeError as e:
+        assert str(e) == "a must be an integer"
+    
+    try:
+        add_integer(2, "hello")
+    except TypeError as e:
+        assert str(e) == "b must be an integer"
+    
+    try:
+        add_integer(None)
+    except TypeError as e:
+        assert str(e) == "a must be an integer"
+    
+    try:
+        add_integer(2.3, None)
+    except TypeError as e:
+        assert str(e) == "b must be an integer"
+
+    # Test cases for invalid inputs
+    try:
+        add_integer(float('inf'))
+    except OverflowError as e:
+        assert "cannot convert float infinity to integer" in str(e)
+    
+    try:
+        add_integer(2, float('inf'))
+    except OverflowError as e:
+        assert "cannot convert float infinity to integer" in str(e)
+    
+    try:
+        add_integer(float('nan'))
+    except ValueError as e:
+        assert "cannot convert float NaN to integer" in str(e)
+    
+    try:
+        add_integer(2, float('nan'))
+    except ValueError as e:
+        assert "cannot convert float NaN to integer" in str(e)
+
+if __name__ == '__main__':
+    test_add_integer()
