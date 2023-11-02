@@ -1,0 +1,39 @@
+say_my_name = __import__('3-say_my_name').say_my_name
+
+# Testing with both a provided first name and last name
+say_my_name("diana", "ntow")
+My name is diana ntow
+
+# Testing with only a provided first name
+say_my_name("diana", "")
+My name is diana
+
+# Testing with only a provided last name
+say_my_name("", "ntow")
+My name is ntow
+
+# Testing with neither a provided first name nor last name
+say_my_name("", "")
+My name is
+
+# Testing with neither a provided first name nor last name
+say_my_name()
+My name is
+
+# Testing with non-string arguments
+say_my_name(5, "man")
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+
+# Testing with non-string arguments
+say_my_name(5, 5)
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+
+# Testing with non-string arguments
+say_my_name("woman", 5)
+Traceback (most recent call last):
+    ...
+TypeError: last_name must be a string
