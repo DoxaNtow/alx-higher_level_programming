@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines true if object is exactly an instance."""
+"""Defines exact same object."""
 
 
 def is_same_class(obj, a_class):
