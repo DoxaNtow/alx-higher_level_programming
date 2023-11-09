@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """This script defines a function for inserting text into a file."""
 
+
 def append_after(filename="", search_string="", new_string=""):
     """Insert specified text after each line containing a target string.
 
